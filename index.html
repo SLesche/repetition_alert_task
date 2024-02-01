@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Repetition Alert Task</title>
+    <meta charset="UTF-8">
+    <script src="jspsych/dist/jspsych.js"></script>
+    <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
+    <link href="jspsych/dist/jspsych.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/rat_styles.css">
+    <script src="scripts/setup.js"></script>
+    <script src="scripts/helper_function.js"></script>
+    <script src="scripts/instructions.js"></script>
+    <script src="scripts/task.js"></script>
+    <script src="scripts/debriefing.js"></script>
+  </head>
+  <body></body>
+  <script>  
+    timeline.push(instructions)
+
+    // Practice here
+    let is_practice = 1;
+    timeline = create_block(timeline, is_practice, n_practice, possible_stimuli, percentage_repeat);
+
+    for (let iblock = 0; iblock < n_blocks; iblock++){
+      is_practice = 0;
+      timeline = create_block(timeline, is_practice, n_trials, possible_stimuli, percentage_repeat);
+    }
+    
+    timeline.push(debriefing);
+
+    jsPsych.run(timeline);
+  </script>
+</html>
