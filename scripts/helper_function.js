@@ -4,7 +4,7 @@ function get_random_stimulus(){
 }
 function get_alternate_stimulus(){
     let previous_stim = null;
-    if (jsPsych.data.get().filter([{type: 'trial'}]).last(1).values()[0] == null | trial_num === 1){
+    if (jsPsych.data.get().filter([{type: 'trial'}]).last(1).values()[0] == null | trial_num === 0){
           previous_stim = possible_stimuli[0];
     } else {
           previous_stim = jsPsych.data.get().filter([{type: 'trial'}]).last(1).values()[0].stimulus;
