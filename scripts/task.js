@@ -11,6 +11,7 @@ function create_trial(stimulus, is_repeat, correct_response){
       data.accuracy = data.response === correct_response ? 1 : 0;
 
       data.is_repeat = is_repeat;
+      data.type = 'trial';
     }
   };
 
@@ -67,7 +68,7 @@ function create_block(timeline, is_practice, n_trials, possible_stimuli, percent
     choices: "NO_KEYS", // No keys allowed during fixation
     trial_duration: 2000,
     response_ends_trial: false,
-    data: "",
+    data: {type: 'instructions'},
   };
 
   const block_break = {
@@ -75,7 +76,7 @@ function create_block(timeline, is_practice, n_trials, possible_stimuli, percent
     stimulus: '<div class = "normal-text">Kurze Pause. Drücke eine beliebige Taste, um fortzufahren</div>',
     choices: "ALL_KEYS", // No keys allowed during fixation
     response_ends_trial: true,
-    data: "",
+    data: {type: 'instructions'},
   };
 
   timeline.push(forced_break, block_break);
@@ -90,7 +91,7 @@ function create_fixation_cross(fixation_cross_dur){
     choices: "NO_KEYS", // No keys allowed during fixation
     trial_duration: fixation_cross_dur, // Duration of fixation in milliseconds
     response_ends_trial: false,
-    data: "",
+    data: {type: 'fixation'},
   };
 
   return fixation_cross;
@@ -115,7 +116,7 @@ function create_feedback(){
       choices: "NO_KEYS", // No keys allowed during fixation
       trial_duration: feedback_dur, // Duration of fixation in milliseconds
       response_ends_trial: false,
-      data: "",
+      data: {type: 'fixation'},
   };
 
   return feedback;

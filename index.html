@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <script src="jspsych/dist/jspsych.js"></script>
     <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/dist/plugin-html-button-response.js"></script>
+    <script src="jspsych/dist/plugin-survey.js"></script>
     <link href="jspsych/dist/jspsych.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/rat_styles.css">
     <script src="scripts/setup.js"></script>
@@ -15,7 +17,10 @@
   </head>
   <body></body>
   <script>  
-    timeline.push(instructions)
+    timeline.push(welcome_screen);
+    timeline.push(consent_screen);
+    // timeline.push(survey_trial);
+    timeline.push(instructions);
 
     // Practice here
     let is_practice = 1;
