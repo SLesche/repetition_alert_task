@@ -36,7 +36,7 @@
                 data.is_repeat = data.stimulus === previous_stim ? 1 : 0;
             }            
             data.accuracy = data.response === get_correct(data.stimulus, data.is_repeat) ? 1 : 0;
-
+            data.letter_stim = extract_stim_from_html(data.stimulus);
             data.type = 'trial';
             data.is_practice = 1;
             data.block_num = block_num;
@@ -66,7 +66,7 @@
                 data.is_repeat = data.stimulus === previous_stim ? 1 : 0;
             }            
             data.accuracy = data.response === get_correct(data.stimulus, data.is_repeat) ? 1 : 0;
-
+            data.letter_stim = extract_stim_from_html(data.stimulus);
             data.type = 'trial';
             data.is_practice = block_num === 0 ? 1 : 0;
             data.block_num = block_num;
@@ -92,7 +92,7 @@
       choices: "NO_KEYS", // No keys allowed during fixation
       trial_duration: feedback_dur, // Duration of fixation in milliseconds
       response_ends_trial: false,
-      data: {type: 'fixation', block_num: block_num}
+      data: {type: 'feedback', block_num: block_num}
     };
 
     var fixation_cross = {
