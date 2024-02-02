@@ -63,7 +63,21 @@ const consent_screen = {
 
 const instructions = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: 'Drücke "d", wenn ein "D" präsentiert wird und "l", wenn ein "L" präsentiert wird. <br/> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste.',
+    stimulus: 'Drücke "d", wenn ein "D" präsentiert wird. <br/> Drücke "l", wenn ein "L" präsentiert wird. <br/> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. <br/> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.',
+    choices: ['Weiter'],
+    data: {type: 'instructions'},
+}
+
+const nogo_instructions = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: 'Drücke weiterhin "d", wenn ein "D" präsentiert wird <br/> Drücke "l", wenn ein "L" präsentiert wird. <br/> Jetzt wird es auch Durchgänge geben, in denen sich "D" und "L" nicht abwechseln. <br/> Wenn z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste.',
+    choices: ['Weiter'],
+    data: {type: 'instructions'},
+}
+
+const experiment_begins = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: 'Die Übungsdurchgänge sind jetzt beendet. <br/> Drücke weiterhin "d", wenn ein "D" präsentiert wird. <br/> Drücke "l", wenn ein "L" präsentiert wird. <br/> Aber drücke die Leertaste, wenn sich "D" und "L" nicht abwechseln.  <br/> Antworte so schnell und präzise wie möglich!',
     choices: ['Weiter'],
     data: {type: 'instructions'},
 }

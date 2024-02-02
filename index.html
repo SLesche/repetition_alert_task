@@ -22,10 +22,17 @@
     // timeline.push(survey_trial);
     timeline.push(instructions);
 
-    // Practice here
+    // Repeat practice
     let is_practice = 1;
+    timeline = create_block(timeline, is_practice, n_repeat_trials, possible_stimuli, practice_repeat_percentage);
+
+    timeline.push(nogo_instructions);
+    // Practice here
+    is_practice = 1;
     timeline = create_block(timeline, is_practice, n_practice, possible_stimuli, percentage_repeat);
 
+    // Now real experiment
+    timeline.push(experiment_begins);
     for (let iblock = 0; iblock < n_blocks; iblock++){
       is_practice = 0;
       timeline = create_block(timeline, is_practice, n_trials, possible_stimuli, percentage_repeat);

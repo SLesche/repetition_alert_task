@@ -62,24 +62,16 @@ function create_block(timeline, is_practice, n_trials, possible_stimuli, percent
   }
 
   // Self paced break here
-  const forced_break = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<div class = "normal-text">Kurze Pause. Drücke eine beliebige Taste, um fortzufahren</div>',
-    choices: "NO_KEYS", // No keys allowed during fixation
-    trial_duration: 2000,
-    response_ends_trial: false,
-    data: {type: 'instructions'},
-  };
-
   const block_break = {
-    type: jsPsychHtmlKeyboardResponse,
+    type: jsPsychHtmlButtonResponse,
     stimulus: '<div class = "normal-text">Kurze Pause. Drücke eine beliebige Taste, um fortzufahren</div>',
-    choices: "ALL_KEYS", // No keys allowed during fixation
-    response_ends_trial: true,
+    choices: ['Weiter'],
     data: {type: 'instructions'},
   };
 
-  timeline.push(forced_break, block_break);
+  if (is_practice === 0){
+    timeline.push(block_break);
+  }
 
   return timeline
 }
@@ -109,6 +101,8 @@ function create_feedback(){
           return '<p class = "normal-text"><span style = "color: green">Richtig</span></p>'; 
         } else if (last_is_repeat & (last_response !== " ")){
           return '<p class = "normal-text"><span style = "color: red">Falsch. Bei Wiederholungen die Leertaste drücken</span></p>'; 
+        } else if (last_response == null){
+          return '<p class = "normal-text"><span style = "color: red">Zu langsam!</span></p>'; 
         } else {
           return '<p class = "normal-text"><span style = "color: red">Falsch</span></p>'; 
         }

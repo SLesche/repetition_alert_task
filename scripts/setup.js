@@ -22,6 +22,8 @@ let timeline = [];
 const n_trials = 100;
 const n_blocks = 5;
 const n_practice = 50;
+const n_repeat_trials = 20;
+const practice_repeat_percentage = 0;
 const possible_response_keys = ["d", "l", " "];
 const possible_stimuli = ["D", "L"]
 
