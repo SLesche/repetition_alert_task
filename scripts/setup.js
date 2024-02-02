@@ -19,10 +19,11 @@ let init_date = new Date();
 let init_time = init_date.getFullYear() + "_" + (init_date.getMonth() + 1) + "_" + init_date.getDate() + "_" + init_date.getHours() + "_" + init_date.getMinutes() + "_" + init_date.getSeconds()
 let timeline = [];
 
-const n_trials = 20;
-const n_blocks = 3;
-const n_practice = 10;
-const n_repeat_trials = 10;
+const n_trials = 100;
+const n_blocks = 5;
+const n_practice = 30;
+const n_alternating_start = 5;
+const n_repeat_trials = 20;
 const practice_repeat_percentage = 0;
 const possible_response_keys = ["d", "l", " "];
 const possible_stimuli = ["D", "L"]

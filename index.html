@@ -46,7 +46,7 @@
     var trial = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function(){
-          if (trial_num < 5){
+          if (trial_num < n_alternating_start){
             return get_alternate_stimulus();
           } else {
             return get_random_stimulus();
