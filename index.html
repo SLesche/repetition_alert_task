@@ -156,6 +156,35 @@
             }
         }
     }
+    
+    let repeat_practice = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p class = "normal-text">Das waren die Übungsdurchgänge. Bist du bereit, das Experiment zu beginnen? </br> Drücke "Weiter" um fortzufahren und "Wiederholen" um nochmal zu üben. </p>',
+      choices: ['Wiederholen', 'Weiter'],
+      data: {type: 'instructions', block_num: block_num},
+      on_finish: function(data){
+        console.log("Saved response:")
+        console.log(data.response)
+        console.log(data.response === 0)
+        if (data.response === 0){
+          repeat_practice_now = 1;
+        } else {
+          repeat_practice_now = 0;
+        }
+      }
+    }
+
+    var repeatable_practice = {
+      timeline: [practice_trials, repeat_practice],
+      loop_function: function() {
+        console.log(["Conditional", repeat_practice_now])
+        if (repeat_practice_now){
+          return true
+        } else {
+          return false
+        }
+      }
+    }
 
     let experiment_blocks = {
         timeline: [trials, maybe_blockbreak],
@@ -171,9 +200,10 @@
 
     var trial_num = 0;
     var block_num = 0;
+    var repeat_practice_now = 1;
 
     // survey trials missing
-    experiment_timeline = [welcome_screen, consent_screen, instructions, easy_trials, nogo_instructions, practice_trials, experiment_begins, experiment_blocks, debriefing];
+    experiment_timeline = [welcome_screen, consent_screen, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, debriefing];
     jsPsych.run(experiment_timeline);
   </script>
 </html>
