@@ -163,9 +163,6 @@
       choices: ['Wiederholen', 'Weiter'],
       data: {type: 'instructions', block_num: block_num},
       on_finish: function(data){
-        console.log("Saved response:")
-        console.log(data.response)
-        console.log(data.response === 0)
         if (data.response === 0){
           repeat_practice_now = 1;
         } else {
@@ -177,7 +174,6 @@
     var repeatable_practice = {
       timeline: [practice_trials, repeat_practice],
       loop_function: function() {
-        console.log(["Conditional", repeat_practice_now])
         if (repeat_practice_now){
           return true
         } else {
