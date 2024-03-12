@@ -1,8 +1,26 @@
-const welcome_screen = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: 'Herzlich Willkommen zum Experiment',
-    choices: ['Weiter'],
+var welcome_screen = {
+    type: jsPsychInstructions,
+    pages: [
+     '<div class = "normal-text">Herzlich Willkommen und vielen Dank für Ihr Interesse an dieser Studie!</br>Im Folgenden werden Sie vor Studienbeginn über die Inhalte und Datenschutzhinweise informiert</div>',
+     '<div class = "normal-text">Im Rahmen des PROJEKTES möchten wir UNTERSUCHUNGSGRUND.</br>Die Bearbeitung wird ca. BEARBEITUNGSDAUER in Anspruch nehmen. Sofern Sie an der Universität Heidelberg studieren, können Sie für die Teilnahme VERGÜTUNG bescheinigt bekommen.</div>',
+     '<div class = "normal-text"><i>Bitte lesen Sie sich die folgenden Informationen sorgfältig durch.</i></br>Die Teilnahme an dieser Studie erfolgt freiwillig und ist mit keinen Risiken verbunden. Es steht Ihnen jederzeit frei, Ihre Teilnahme zu widerrufen oder abzubrechen, ohne dass hierdurch ein Nachteil für Sie entsteht. Die Studie dient rein wissenschaftlichen Zwecken und hat keinerlei kommerziellen Hintergrund. Ihre Daten werden anonym erfasst und gespeichert, sodass kein Rückschluss auf Ihre Person möglich ist.</br>Wenn Sie Fragen zu dieser Erhebung haben, wenden Sie sich gerne an die Versuchsleiterin vor Ort.</div>',
+    ],
+    show_clickable_nav: true, 
     data: {type: 'instructions'},
+    button_label_next: "Weiter",
+    button_label_previous: "Zurück",
+}
+
+var consent = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: '<div class = "normal-text"><b>Teilnahmebestätigung</b></br>Ich habe die Einverständniserklärung gelesen, verstanden und erkläre mich mit den Bedingungen der Teilnahme einverstanden.</div>',
+    choices: ['Ja', 'Nein'],
+    data: {type: 'instructions'},
+    on_finish: function(data){
+        if(data.response == 1){
+          jsPsych.endExperiment("Das Experiment wurde erfolgreich abgebrochen");
+        }
+      }
 }
 
 const survey_trial = {
@@ -54,18 +72,16 @@ const survey_trial = {
     data: {type: 'demographics'},
 };
 
-const consent_screen = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: 'Hier Consent',
-    choices: ['Weiter'],
+var instructions = {
+    type: jsPsychInstructions,
+    pages: [
+     '<div class = "normal-text">Drücke "d", wenn ein "D" präsentiert wird. <br/> Drücke "l", wenn ein "L" präsentiert wird. <br/> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. <br/> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.</div>',
+     `<div class = "normal-text">More task instructions!</div>`,
+    ],
+    show_clickable_nav: true, 
     data: {type: 'instructions'},
-}
-
-const instructions = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: 'Drücke "d", wenn ein "D" präsentiert wird. <br/> Drücke "l", wenn ein "L" präsentiert wird. <br/> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. <br/> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.',
-    choices: ['Weiter'],
-    data: {type: 'instructions'},
+    button_label_next: "Weiter",
+    button_label_previous: "Zurück",
 }
 
 const nogo_instructions = {
