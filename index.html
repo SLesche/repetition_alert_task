@@ -57,6 +57,10 @@
         stimulus_duration: stim_duration,
         trial_duration: trial_duration,
         response_ends_trial: true,
+        post_trial_gap: function(){
+          let gap = block_num === 0 ? 0: rsi_duration - fixation_dur
+          return gap
+        },
         on_finish: function(data) {
             // Record accuracy and congruency
             // is accurate if the response is equal to the correct response, which is determined by the previous stimulus
@@ -93,6 +97,7 @@
       choices: "NO_KEYS", // No keys allowed during fixation
       trial_duration: feedback_dur, // Duration of fixation in milliseconds
       response_ends_trial: false,
+      post_trial_gap: rsi_duration - feedback_dur - fixation_dur,
       data: {type: 'feedback', block_num: block_num}
     };
 
@@ -100,7 +105,7 @@
         type: jsPsychHtmlKeyboardResponse,
         stimulus: '<p class = "normal-text">+</p>',
         choices: "NO_KEYS", // No keys allowed during fixation
-        trial_duration: 450, // Duration of fixation in milliseconds
+        trial_duration: fixation_dur, // Duration of fixation in milliseconds
         response_ends_trial: false,
         data: {type: 'fixation', block_num: block_num},
     };
@@ -176,6 +181,7 @@
       timeline: [practice_trials, repeat_practice],
       loop_function: function() {
         if (repeat_practice_now){
+          block_num = 0;
           return true
         } else {
           return false
@@ -196,12 +202,12 @@
     }
 
     var trial_num = 0;
-    var block_num = 0;
+    var block_num = 1;
     var repeat_practice_now = 1;
 
     // survey trials missing
     //experiment_timeline = [welcome_screen, consent, survey_trial, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, debriefing];
-    experiment_timeline = [repeatable_practice]
+    experiment_timeline = [experiment_blocks]
     jsPsych.run(experiment_timeline);
   </script>
 </html>

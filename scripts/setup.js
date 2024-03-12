@@ -32,6 +32,7 @@ const percentage_repeat = 0.25;
 const trial_duration = 1000;
 const stim_duration = 200;
 const feedback_dur = 400;
+const fixation_dur = 200;
 const rsi_duration = 500;
 
 // Remove later
