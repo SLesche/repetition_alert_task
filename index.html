@@ -81,13 +81,13 @@
         const last_response = jsPsych.data.get().last(1).values()[0].response;
         const last_is_repeat = jsPsych.data.get().last(1).values()[0].is_repeat;
         if (last_trial_correct) {
-          return '<p class = "normal-text"><span style = "color: green">Richtig</span></p>'; 
+          return '<p class = "feedback-stim"><span style = "color: green">Richtig</span></p>'; 
         } else if (last_is_repeat & (last_response !== " ")){
-          return '<p class = "normal-text"><span style = "color: red">Falsch. Bei Wiederholungen die Leertaste drücken</span></p>'; 
+          return '<p class = "feedback-stim"><span style = "color: red">Falsch. Bei Wiederholungen die Leertaste drücken</span></p>'; 
         } else if (last_response == null){
-          return '<p class = "normal-text"><span style = "color: red">Zu langsam!</span></p>'; 
+          return '<p class = "feedback-stim"><span style = "color: red">Zu langsam!</span></p>'; 
         } else {
-          return '<p class = "normal-text"><span style = "color: red">Falsch</span></p>'; 
+          return '<p class = "feedback-stim"><span style = "color: red">Falsch</span></p>'; 
         }
       },
       choices: "NO_KEYS", // No keys allowed during fixation
