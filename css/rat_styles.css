@@ -14,7 +14,10 @@ body {
 }
 
 .feedback-stim {
-    font-size: 60px;
+    font-size: 48px;
+    line-height: 1.2;
+    width: 85%;
+    margin: 0 auto;
 }
 
 .normal-text {

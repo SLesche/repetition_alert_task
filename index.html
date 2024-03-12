@@ -81,13 +81,13 @@
         const last_response = jsPsych.data.get().last(1).values()[0].response;
         const last_is_repeat = jsPsych.data.get().last(1).values()[0].is_repeat;
         if (last_trial_correct) {
-          return '<p class = "feedback-stim"><span style = "color: green">Richtig</span></p>'; 
+          return '<div class = "feedback-stim"><span style = "color: green">Richtig</span></div>'; 
         } else if (last_is_repeat & (last_response !== " ")){
-          return '<p class = "feedback-stim"><span style = "color: red">Falsch. Bei Wiederholungen die Leertaste drücken</span></p>'; 
+          return '<div class = "feedback-stim"><span style = "color: red">Falsch. Bei Wiederholungen die Leertaste drücken</span></div>'; 
         } else if (last_response == null){
-          return '<p class = "feedback-stim"><span style = "color: red">Zu langsam!</span></p>'; 
+          return '<div class = "feedback-stim"><span style = "color: red">Zu langsam!</span></div>'; 
         } else {
-          return '<p class = "feedback-stim"><span style = "color: red">Falsch</span></p>'; 
+          return '<div class = "feedback-stim"><span style = "color: red">Falsch</span></div>'; 
         }
       },
       choices: "NO_KEYS", // No keys allowed during fixation
@@ -200,7 +200,8 @@
     var repeat_practice_now = 1;
 
     // survey trials missing
-    experiment_timeline = [welcome_screen, consent, survey_trial, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, debriefing];
+    //experiment_timeline = [welcome_screen, consent, survey_trial, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, debriefing];
+    experiment_timeline = [repeatable_practice]
     jsPsych.run(experiment_timeline);
   </script>
 </html>
