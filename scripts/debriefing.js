@@ -9,7 +9,6 @@ const debriefing = {
     stimulus: 'Vielen Dank für deine Teilnahme!',
     data: {type: 'instructions'},
     on_start: function() {
-      jsPsych.data.get().localSave('csv', experiment_file);
       console.log("Message sent");
       sendMessage("Experiment done - SL");
         }
