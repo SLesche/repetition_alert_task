@@ -23,6 +23,7 @@ var consent = {
       }
 }
 
+/*
 const survey_trial = {
     type: jsPsychSurvey,
     pages: [
@@ -47,15 +48,6 @@ const survey_trial = {
             name: 'occupation',
             required: true,
         },
-    /*
-        {
-            type: 'multi-choice',
-            prompt: "Tätigkeit",
-            options: ['Schüler*in'],
-            name: 'occupation',
-            required: true,
-        },
-    */
         {
             type: 'text',
             prompt: "Studienfach (bei Studierenden)",
@@ -71,6 +63,7 @@ const survey_trial = {
     show_question_numbers: 'onPage',
     data: {type: 'demographics'},
 };
+*/
 
 var instructions = {
     type: jsPsychInstructions,
