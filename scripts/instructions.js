@@ -23,7 +23,7 @@ var consent = {
       }
 }
 
-/*
+
 const survey_trial = {
     type: jsPsychSurvey,
     pages: [
@@ -63,7 +63,7 @@ const survey_trial = {
     show_question_numbers: 'onPage',
     data: {type: 'demographics'},
 };
-*/
+
 
 var instructions = {
     type: jsPsychInstructions,
