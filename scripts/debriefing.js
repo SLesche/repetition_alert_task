@@ -10,6 +10,7 @@ const debriefing = {
     data: {type: 'instructions'},
     on_start: function() {
       jsPsych.data.get().localSave('csv', experiment_file);
+      console.log("Message sent");
       sendMessage("Experiment done - SL");
         }
   }
