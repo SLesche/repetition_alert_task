@@ -8,6 +8,7 @@
     <script src="jspsych/dist/plugin-html-button-response.js"></script>
     <script src="jspsych/dist/plugin-instructions.js"></script>
     <script src="jspsych/dist/plugin-survey.js"></script>
+    <script src="jspsych/dist/plugin-survey-likert.js"></script>
     <link href="jspsych/dist/jspsych.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/rat_styles.css">
     <script src="scripts/setup.js"></script>
@@ -206,8 +207,8 @@
     var repeat_practice_now = 1;
 
     // survey trials missing
-    //experiment_timeline = [welcome_screen, consent, survey_trial, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, debriefing];
-    experiment_timeline = [experiment_blocks, debriefing]
+    experiment_timeline = [welcome_screen, consent, survey_trial, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, slider_survey, debriefing];
+    //experiment_timeline = [slider_survey, debriefing]
     jsPsych.run(experiment_timeline);
   </script>
 </html>

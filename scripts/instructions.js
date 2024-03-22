@@ -90,3 +90,25 @@ const experiment_begins = {
     choices: ['Weiter'],
     data: {type: 'instructions'},
 }
+
+
+var slider_labels = [
+    '1<br>stimme überhaupt nicht zu',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7<br>stimme voll und ganz zu'
+]
+
+var slider_survey = {
+    type: jsPsychSurveyLikert,
+    questions: [
+        {prompt: "Mein Ziel in der vorausgegangenen Reaktionszeitaufgabe war es, in der Aufgabe möglichst gut abzuschneiden.", name: "gut-abschneiden", labels: slider_labels},
+        {prompt: "Das Bearbeiten der Reaktionszeitaufgabe war für mich eine positive Herausforderung.", name: "pos-herausforderung", labels: slider_labels},
+        {prompt: "Mein Ziel in der vorausgegangenen Reaktionszeitaufgabe war es, die Aufgabe möglichst fehlerfrei zu bearbeiten.", name: "fehler-vermeiden", labels: slider_labels},
+        {prompt: "Das Bearbeiten der Reaktionszeitaufgabe war für mich eine stressige und herausfordernde Situation.", name: "neg-stress", labels: slider_labels}
+    ],
+    randomize_question_order: false
+  }
