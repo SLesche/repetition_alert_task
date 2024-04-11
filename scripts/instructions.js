@@ -60,7 +60,7 @@ const survey_trial = {
     button_label_back: 'Zurück',
     button_label_finish: 'Weiter',
     show_question_numbers: 'onPage',
-    data: {type: 'demographics'},
+    data: {type: 'survey'},
 };
 
 
@@ -118,5 +118,6 @@ var slider_survey = {
         {prompt: '<div class = "normal-text">Mein Ziel in der vorausgegangenen Reaktionszeitaufgabe war es, die Aufgabe möglichst fehlerfrei zu bearbeiten.</div>', name: "fehler-vermeiden", labels: slider_labels},
         {prompt: '<div class = "normal-text">Das Bearbeiten der Reaktionszeitaufgabe war für mich eine stressige und herausfordernde Situation.</div>', name: "neg-stress", labels: slider_labels}
     ],
-    randomize_question_order: false
+    randomize_question_order: false,
+    data: {type: 'survey'}
   }

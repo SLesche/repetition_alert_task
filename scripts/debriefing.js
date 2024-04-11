@@ -13,10 +13,10 @@ const debriefing = {
     Sie können das Browser Fenster nun schließen.</div>`,
     data: {type: 'instructions'},
     on_start: function() {
-      //jsPsych.data.get().localSave('csv', experiment_file);
+      jsPsych.data.get().filter([{type: 'trial'}, {type: 'survey'}]).localSave('csv', experiment_file);
       console.log("Message sent");
 
-      // TODO, replace with JSON stringify
-      sendMessage(JSON.stringify(jsPsych.data.get()));
+      // Send the data, but only with type "trial" or type "survey" 
+      sendMessage(JSON.stringify(jsPsych.data.get().filter([{type: 'trial'}, {type: 'survey'}])));
         }
   }
