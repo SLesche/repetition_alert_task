@@ -87,10 +87,10 @@
         const last_is_repeat = jsPsych.data.get().last(1).values()[0].is_repeat;
         if (last_trial_correct) {
           return '<div class = "feedback-stim"><span style = "color: green">Richtig</span></div>'; 
-        } else if (last_is_repeat & (last_response !== " ")){
-          return '<div class = "feedback-stim"><span style = "color: red">Falsch. Bei Wiederholungen die Leertaste drücken</span></div>'; 
         } else if (last_response == null){
           return '<div class = "feedback-stim"><span style = "color: red">Zu langsam!</span></div>'; 
+        } else if (last_is_repeat & (last_response !== " ")){
+          return '<div class = "feedback-stim"><span style = "color: red">Falsch. Bei Wiederholungen die Leertaste drücken</span></div>'; 
         } else {
           return '<div class = "feedback-stim"><span style = "color: red">Falsch</span></div>'; 
         }
