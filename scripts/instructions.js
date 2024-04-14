@@ -114,7 +114,7 @@ var slider_survey = {
     type: jsPsychSurveyLikert,
     questions: [
         {prompt: '<div class = "normal-text">Mein Ziel in der vorausgegangenen Reaktionszeitaufgabe war es, in der Aufgabe möglichst gut abzuschneiden.</div>', name: "gut-abschneiden", labels: slider_labels},
-        {prompt: '<div class = "normal-text">Das Bearbeiten der Reaktionszeitaufgabe war für mich eine positive Herausforderung.", name: "pos-herausforderung</div>', labels: slider_labels},
+        {prompt: '<div class = "normal-text">Das Bearbeiten der Reaktionszeitaufgabe war für mich eine positive Herausforderung.</div>', name: "pos-herausforderung", labels: slider_labels},
         {prompt: '<div class = "normal-text">Mein Ziel in der vorausgegangenen Reaktionszeitaufgabe war es, die Aufgabe möglichst fehlerfrei zu bearbeiten.</div>', name: "fehler-vermeiden", labels: slider_labels},
         {prompt: '<div class = "normal-text">Das Bearbeiten der Reaktionszeitaufgabe war für mich eine stressige und herausfordernde Situation.</div>', name: "neg-stress", labels: slider_labels}
     ],
