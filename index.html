@@ -56,7 +56,7 @@
         },
         choices: possible_response_keys,
         stimulus_duration: stim_duration,
-        trial_duration: trial_duration,
+        trial_duration: 0.1,
         response_ends_trial: true,
         post_trial_gap: function(){
           let gap = block_num === 0 ? 0: rsi_duration - fixation_dur
