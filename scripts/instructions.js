@@ -70,12 +70,12 @@ var instructions = {
         if(current_condition == "competitive"){
             return [
                 '<div class = "normal-text"><p>In mehreren Studien wurde herausgefunden, dass Studierende in Reaktionszeitaufgaben vergleichbar schnell sind. Manche Studierende sind deutlich besser als andere.</p><p>Heute hast du die Möglichkeit zu beweisen, dass du im Vergleich zu anderen Studierenden besonders viele Durchgänge richtig machst.</p><p>Schaffe so viele Durchgänge wie möglich</p></div>',
-                '<div class = "normal-text">Drücke "d", wenn ein "D" präsentiert wird. </br> Drücke "l", wenn ein "L" präsentiert wird. </br> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. </br> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.</div>',
+                '<div class = "normal-text">Drücke "D", wenn ein "D" präsentiert wird. </br> Drücke "L", wenn ein "L" präsentiert wird. </br> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. </br> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.</div>',
             ]
         } else {
             return [
                 '<div class = "normal-text"><p>In mehreren Studien wurde herausgefunden, dass Studierende in Reaktionszeitaufgaben vergleichbar schnell sind. Manche Studierende sind deutlich schlechter als andere.</p><p>Heute hast du die Möglichkeit zu beweisen, dass du nicht zu den Schlechtesten gehörst.</p><p>Mache so wenig Fehler wie möglich</p></div>',
-                '<div class = "normal-text">Drücke "d", wenn ein "D" präsentiert wird. </br> Drücke "l", wenn ein "L" präsentiert wird. </br> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. </br> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.</div>',
+                '<div class = "normal-text">Drücke "D", wenn ein "D" präsentiert wird. </br> Drücke "L", wenn ein "L" präsentiert wird. </br> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. </br> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.</div>',
             ]
         }
     },
@@ -87,14 +87,14 @@ var instructions = {
 
 const nogo_instructions = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class = "normal-text">Drücke weiterhin "d", wenn ein "D" präsentiert wird </br> Drücke "l", wenn ein "L" präsentiert wird. </br> Jetzt wird es auch Durchgänge geben, in denen sich "D" und "L" nicht abwechseln. <br> Wenn z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste.</br> Antworte so schnell und präzise wie möglich!</div>',
+    stimulus: '<div class = "normal-text">Drücke weiterhin "D", wenn ein "D" präsentiert wird </br> Drücke "L", wenn ein "L" präsentiert wird. </br> Jetzt wird es auch Durchgänge geben, in denen sich "D" und "L" nicht abwechseln. <br> Wenn z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste.</br> Antworte so schnell und präzise wie möglich!</div>',
     choices: ['Weiter'],
     data: {type: 'instructions'},
 }
 
 const experiment_begins = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class = "normal-text">Die Übungsdurchgänge sind jetzt beendet. </br> Drücke weiterhin "d", wenn ein "D" präsentiert wird. </br> Drücke "l", wenn ein "L" präsentiert wird. </br> Aber drücke die Leertaste, wenn sich "D" und "L" nicht abwechseln.</br> Antworte so schnell und präzise wie möglich!</div>',
+    stimulus: '<div class = "normal-text">Die Übungsdurchgänge sind jetzt beendet. </br> Drücke weiterhin "D", wenn ein "D" präsentiert wird. </br> Drücke "L", wenn ein "L" präsentiert wird. </br> Aber drücke die Leertaste, wenn sich "D" und "L" nicht abwechseln.</br> Antworte so schnell und präzise wie möglich!</div>',
     choices: ['Weiter'],
     data: {type: 'instructions'},
 }
