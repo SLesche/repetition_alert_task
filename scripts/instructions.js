@@ -128,4 +128,5 @@ var open_question = {
         {prompt: '<div class = "normal-text">Was denkst du war das Ziel der Studie?</div>', name: "ziel"},
     ],
     button_label: "Weiter",
+    data: {type: 'survey'}
 }
