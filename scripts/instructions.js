@@ -13,7 +13,7 @@ var welcome_screen = {
 
 var consent = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class = "normal-text" style="text-align:justify"><b>Einverständniserklärung</b></br>Ich habe die Studieninformationen erhalten, gelesen und verstanden. Ich hatte ausreichend Zeit, mich für oder gegen die Teilnahme an dieser Studie zu entscheiden. Ich nehme freiwillig an dieser Studie teil. Ich habe verstanden, dass es mir jederzeit und ohne Angabe von Gründen freisteht, von dieser Studie zurückzutreten. Ich bin damit einverstanden, dass die im Rahmen der Studie erhobenen Daten in der Weise verarbeitet werden, wie es in den Studieninformationen beschrieben wurde. Ich stimme zu, dass die im Rahmen dieser Studie erhobenen Daten für wissenschaftliche Zwecke und im Rahmen der wissenschaftlichen Ausbildung verwendet werden.</br>Ich gebe mein Einverständnis zur Teilnahme an dieser Studie.</div>',
+    stimulus: '<div class = "normal-text" style="text-align:justify; font-size:20px"><b>Einverständniserklärung</b></br>Ich habe die Studieninformationen erhalten, gelesen und verstanden. Ich hatte ausreichend Zeit, mich für oder gegen die Teilnahme an dieser Studie zu entscheiden. Ich nehme freiwillig an dieser Studie teil. Ich habe verstanden, dass es mir jederzeit und ohne Angabe von Gründen freisteht, von dieser Studie zurückzutreten. Ich bin damit einverstanden, dass die im Rahmen der Studie erhobenen Daten in der Weise verarbeitet werden, wie es in den Studieninformationen beschrieben wurde. Ich stimme zu, dass die im Rahmen dieser Studie erhobenen Daten für wissenschaftliche Zwecke und im Rahmen der wissenschaftlichen Ausbildung verwendet werden.</br>Ich gebe mein Einverständnis zur Teilnahme an dieser Studie.</div>',
     choices: ['Ja', 'Nein'],
     data: {type: 'instructions'},
     on_finish: function(data){
@@ -69,12 +69,12 @@ var instructions = {
     pages: function(){
         if(current_condition == "competitive"){
             return [
-                '<div class = "normal-text"><p>In mehreren Studien wurde herausgefunden, dass Studierende in Reaktionszeitaufgaben vergleichbar schnell sind. Manche Studierende sind deutlich besser als andere.</p><p>Heute hast du die Möglichkeit zu beweisen, dass du im Vergleich zu anderen Studierenden besonders viele Durchgänge richtig machst.</p><p>Schaffe so viele Durchgänge wie möglich</p></div>',
+                '<div class = "normal-text"><p>Du wirst gleich eine Reaktionszeitaufgabe bearbeiten. Manche Teilnehmende sind darin deutlich besser als andere.</p><p>Heute hast du die Möglichkeit zu beweisen, dass du zu den Besten gehörst.</p><p>Schaffe so viele richtige Durchgänge wie möglich</p></div>',
                 '<div class = "normal-text">Drücke "D", wenn ein "D" präsentiert wird. </br> Drücke "L", wenn ein "L" präsentiert wird. </br> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. </br> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.</div>',
             ]
         } else {
             return [
-                '<div class = "normal-text"><p>In mehreren Studien wurde herausgefunden, dass Studierende in Reaktionszeitaufgaben vergleichbar schnell sind. Manche Studierende sind deutlich schlechter als andere.</p><p>Heute hast du die Möglichkeit zu beweisen, dass du nicht zu den Schlechtesten gehörst.</p><p>Mache so wenig Fehler wie möglich</p></div>',
+                '<div class = "normal-text"><p>Du wirst gleich eine Reaktionszeitaufgabe bearbeiten. Manche Teilnehmende sind darin deutlich schlechter als andere.</p><p>Heute hast du die Möglichkeit zu beweisen, dass du nicht zu den Schlechtesten gehörst.</p><p>Mache so wenig Fehler wie möglich</p></div>',
                 '<div class = "normal-text">Drücke "D", wenn ein "D" präsentiert wird. </br> Drücke "L", wenn ein "L" präsentiert wird. </br> "D" und "L" wechseln sich meistens ab. Wenn sie sich nicht abwechseln, also z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste. </br> Im Folgenden wird kurz die Präsentation von "D" und "L" geübt.</div>',
             ]
         }

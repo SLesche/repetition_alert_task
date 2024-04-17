@@ -41,6 +41,8 @@ const subject_number = 1;
 const possible_conditions = ["competitive", "cooperative"];
 const current_condition = jsPsych.randomization.sampleWithoutReplacement(possible_conditions, 1)[0];
 
+const condition_instruction = current_condition == "competitive" ? `<p>Denke dran so wenig Fehler wie möglich zu machen</p>` : `<p>Denke dran so viele richtige Durchgänge wie möglich zu schaffen</p>`;
+
 // record the condition assignment in the jsPsych data
 // this adds a property called 'subject' and a property called 'condition' to every trial
 jsPsych.data.addProperties({
