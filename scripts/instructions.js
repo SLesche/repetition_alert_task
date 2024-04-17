@@ -121,3 +121,11 @@ var slider_survey = {
     randomize_question_order: false,
     data: {type: 'survey'}
   }
+
+var open_question = {
+    type: jsPsychSurveyText,
+    questions: [
+        {prompt: '<div class = "normal-text">Was denkst du war das Ziel der Studie?</div>', name: "ziel"},
+    ],
+    button_label: "Weiter",
+}
