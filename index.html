@@ -143,7 +143,7 @@
     var maybe_blockbreak = {
         timeline: [{
         type: jsPsychHtmlButtonResponse,
-        stimulus: '<p class = "normal-text">Kurze Pause. Drücke "Weiter", um fortzufahren</p>',
+        stimulus: `<div class = "normal-text"><p>Kurze Pause. Drücke "Weiter", um fortzufahren.</p></br>${condition_instruction}</div>`,
         choices: ['Weiter'],
         data: {type: 'instructions', block_num: block_num},
         }],
@@ -168,7 +168,7 @@
     
     let repeat_practice = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<p class = "normal-text">Das waren die Übungsdurchgänge. Bist du bereit, das Experiment zu beginnen? </br> Drücke "Weiter" um fortzufahren und "Wiederholen" um nochmal zu üben. </p>',
+      stimulus: `<div class = "normal-text"><p>Das waren die Übungsdurchgänge. Bist du bereit, das Experiment zu beginnen? </br> Drücke "Weiter" um fortzufahren und "Wiederholen" um nochmal zu üben.</p></div>`,
       choices: ['Wiederholen', 'Weiter'],
       data: {type: 'instructions', block_num: block_num},
       on_finish: function(data){
@@ -209,7 +209,7 @@
     var repeat_practice_now = 1;
 
     // survey trials missing
-    experiment_timeline = [welcome_screen, consent, survey_trial, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, slider_survey, open_question, debriefing];
+    experiment_timeline = [subject_number_entry, welcome_screen, consent, survey_trial, instructions, easy_trials, nogo_instructions, repeatable_practice, experiment_begins, experiment_blocks, slider_survey, open_question, debriefing];
     //experiment_timeline = [open_question, debriefing]
     jsPsych.run(experiment_timeline);
   </script>

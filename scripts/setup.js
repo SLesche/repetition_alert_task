@@ -36,7 +36,7 @@ const fixation_dur = 200;
 const rsi_duration = 500;
 
 // Remove later
-const subject_number = 1;
+var subject_number = 999;
 
 const possible_conditions = ["competitive", "cooperative"];
 const current_condition = jsPsych.randomization.sampleWithoutReplacement(possible_conditions, 1)[0];
@@ -45,9 +45,4 @@ const condition_instruction = current_condition == "competitive" ? `<p>Denke dra
 
 // record the condition assignment in the jsPsych data
 // this adds a property called 'subject' and a property called 'condition' to every trial
-jsPsych.data.addProperties({
-  subject: subject_number,
-  condition: current_condition
-});
-
 const experiment_file = "./data/" + experiment_short_name + "_" + subject_number + "_" + init_time + ".csv"

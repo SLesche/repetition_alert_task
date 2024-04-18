@@ -1,3 +1,19 @@
+var subject_number_entry = {
+    type: jsPsychSurveyText,
+    questions: [
+        {prompt: '<div class = "normal-text">Was ist deine Versuchspersonennummer</div>', name: "vpnummer"},
+    ],
+    button_label: "Weiter",
+    data: {type: 'survey'},
+    on_finish: function(data){
+        subject_number = data.response.vpnummer;
+        jsPsych.data.addProperties({
+            subject: subject_number,
+            condition: current_condition
+          });
+          
+    }
+}
 var welcome_screen = {
     type: jsPsychInstructions,
     pages: [
@@ -87,14 +103,14 @@ var instructions = {
 
 const nogo_instructions = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class = "normal-text">Drücke weiterhin "D", wenn ein "D" präsentiert wird </br> Drücke "L", wenn ein "L" präsentiert wird. </br> Jetzt wird es auch Durchgänge geben, in denen sich "D" und "L" nicht abwechseln. <br> Wenn z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste.</br> Antworte so schnell und präzise wie möglich!</div>',
+    stimulus: `<div class = "normal-text">Drücke weiterhin "D", wenn ein "D" präsentiert wird </br> Drücke "L", wenn ein "L" präsentiert wird. </br> Jetzt wird es auch Durchgänge geben, in denen sich "D" und "L" nicht abwechseln. <br> Wenn z.B. ein "D" nach einem "D" präsentiert wird, drücke die Leertaste.</br>${condition_instruction}</div>`,
     choices: ['Weiter'],
     data: {type: 'instructions'},
 }
 
 const experiment_begins = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: '<div class = "normal-text">Die Übungsdurchgänge sind jetzt beendet. </br> Drücke weiterhin "D", wenn ein "D" präsentiert wird. </br> Drücke "L", wenn ein "L" präsentiert wird. </br> Aber drücke die Leertaste, wenn sich "D" und "L" nicht abwechseln.</br> Antworte so schnell und präzise wie möglich!</div>',
+    stimulus: `<div class = "normal-text">Die Übungsdurchgänge sind jetzt beendet. </br> Drücke weiterhin "D", wenn ein "D" präsentiert wird. </br> Drücke "L", wenn ein "L" präsentiert wird. </br> Aber drücke die Leertaste, wenn sich "D" und "L" nicht abwechseln.</br>${condition_instruction}</div>`,
     choices: ['Weiter'],
     data: {type: 'instructions'},
 }
