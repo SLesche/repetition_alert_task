@@ -36,7 +36,7 @@ const fixation_dur = 200;
 const rsi_duration = 500;
 
 // Remove later
-var subject_number = 999;
+var subject_number = jsPsych.randomization.randomID(6);
 
 const possible_conditions = ["approach", "avoidance"];
 const current_condition = jsPsych.randomization.sampleWithoutReplacement(possible_conditions, 1)[0];
