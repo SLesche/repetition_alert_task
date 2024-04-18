@@ -192,8 +192,15 @@
       }
     }
 
+    var experiment_countdown = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: `<div class = "normal-text"><p>Die Aufgabe beginnt in 5 Sekunden. Mache dich bereit mit "D" oder "L" zu antworten</p></div>`,
+      choices: "NO_KEYS",
+      trial_duration: 5000
+    }
+
     let experiment_blocks = {
-        timeline: [trials, maybe_blockbreak],
+        timeline: [experiment_countdown, trials, maybe_blockbreak],
         loop_function: function(data){
             if (block_num < (n_blocks + 1)){
                 block_num ++;
