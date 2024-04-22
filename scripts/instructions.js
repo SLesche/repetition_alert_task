@@ -135,6 +135,7 @@ var slider_survey = {
         {prompt: '<div class = "normal-text">Das Bearbeiten der Reaktionszeitaufgabe war für mich eine stressige und herausfordernde Situation.</div>', name: "neg-stress", labels: slider_labels}
     ],
     randomize_question_order: false,
+    button_label: "Weiter",
     data: {type: 'survey'}
   }
 
