@@ -127,8 +127,9 @@ var slider_labels = [
 ]
 
 var slider_instructions = {
-    type: jsPsychHtmlKeyboardResponse,
+    type: jsPsychHtmlButtonResponse,
     stimulus: `<div class = "normal-text">Das war der letzte Durchgang der Reaktionszeitaufgabe. Nun wirst du noch einige kurze Fragen beantworten.</br>Bitte bewerte die folgenden Aussagen auf einer Skala von 1 bis 7, wobei 1 "stimme überhaupt nicht zu" und 7 "stimme voll und ganz zu" bedeutet.</div>`,
+    choices: ['Weiter'],
 }
 
 var slider_survey = {
