@@ -77,6 +77,9 @@ const survey_trial = {
     button_label_finish: 'Weiter',
     show_question_numbers: 'onPage',
     data: {type: 'survey'},
+    on_finish: function(data){
+        data.condition = current_condition;
+    }
 };
 
 

@@ -13,7 +13,7 @@ const debriefing = {
     choices: ['Weiter'],
     data: {type: 'instructions'},
     on_finish: function() {
-      //jsPsych.data.get().filter([{type: 'trial'}, {type: 'survey'}]).localSave('csv', experiment_file);
+      jsPsych.data.get().filter([{type: 'trial'}, {type: 'survey'}]).localSave('csv', experiment_file);
       console.log("Message sent");
 
       // Send the data, but only with type "trial" or type "survey" 
